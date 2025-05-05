@@ -1,0 +1,36 @@
+from turtle import Turtle, Screen
+
+tim = Turtle()
+screen = Screen()
+
+tim.speed("fastest")
+
+def backward():
+    tim.backward(10)
+
+def forwards():
+    tim.forward(10)
+
+def turn_right():
+    new_heading = tim.heading() - 10
+    tim.setheading(new_heading)
+
+def turn_left():
+    new_heading = tim.heading() + 10
+    tim.setheading(new_heading)
+
+def clear():
+    tim.clear()
+    tim.penup()
+    tim.home()
+
+screen = Screen()
+
+screen.listen()
+screen.onkey(forwards, key="w")
+screen.onkey(backward, key="s")
+screen.onkey(turn_right,key ="a")
+screen.onkey(turn_left,key="d")
+screen.onkey(clear, key ="c")
+screen.exitonclick()
+
